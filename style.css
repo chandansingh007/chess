@@ -1,0 +1,79 @@
+.square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1;
+    width: 100%;
+    height: 100%;
+    font-size: 2.5rem;
+    /* Adjust based on board size */
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease;
+}
+
+@media (min-width: 768px) {
+    .square {
+        font-size: 3.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .square {
+        font-size: 4rem;
+    }
+}
+
+.square.light {
+    background-color: #e8edf9;
+    color: #1e293b;
+    /* Dark slate for pieces on light squares */
+}
+
+.square.dark {
+    background-color: #779556;
+    color: #1e293b;
+}
+
+/* Piece Styling */
+.piece {
+    cursor: grab;
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.piece:active {
+    cursor: grabbing;
+    transform: scale(1.1);
+}
+
+.piece.white {
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.piece.black {
+    color: #000000;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
+}
+
+/* Highlights */
+.square.selected {
+    background-color: rgba(255, 255, 0, 0.5) !important;
+}
+
+.square.valid-move {
+    position: relative;
+}
+
+.square.valid-move::after {
+    content: '';
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+}
+
+.square.valid-move:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}

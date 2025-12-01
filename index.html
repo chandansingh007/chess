@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess | Masterpiece</title>
+
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        chess: {
+                            light: '#e8edf9',
+                            dark: '#b7c0d8',
+                            highlight: 'rgba(255, 255, 0, 0.5)',
+                            move: 'rgba(0, 255, 0, 0.3)'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-slate-900 text-white min-h-screen flex flex-col items-center justify-center p-4">
+
+    <!-- Header -->
+    <header class="mb-8 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight mb-2">Chess</h1>
+        <div id="turn-indicator" class="flex items-center gap-3 text-xl font-medium">
+            <span class="w-4 h-4 rounded-full bg-white border border-slate-300 shadow-sm" id="turn-dot"></span>
+            <span id="turn-text">White</span>
+        </div>
+        </div>
+
+        <div class="mb-6">
+            <h2 class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-2">Score</h2>
+            <div class="flex justify-between items-center mb-2">
+                <span class="text-slate-300">White</span>
+                <span id="score-white" class="font-bold text-white">0</span>
+            </div>
+            <div class="flex justify-between items-center">
+                <span class="text-slate-300">Black</span>
+                <span id="score-black" class="font-bold text-white">0</span>
+            </div>
+        </div>
+
+        <div class="mb-6">
+            <h2 class="text-xs uppercase tracking-wider text-slate-500 font-semibold mb-2">Status</h2>
+            <p id="game-status" class="text-slate-300">Game in progress</p>
+        </div>
+
+        <button id="reset-btn"
+            class="w-full py-2 px-4 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-medium transition-colors shadow-lg shadow-indigo-500/20">
+            New Game
+        </button>
+        </div>
+        </main>
+
+        <script src="script.js"></script>
+</body>
+
+</html>
